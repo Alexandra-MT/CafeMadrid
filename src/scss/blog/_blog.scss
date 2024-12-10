@@ -1,0 +1,36 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.contenido-blog{
+    @include m.grid(1, 5rem);
+    @include m.tablet{
+        @include m.grid(2, 5rem);
+    }
+    @include m.desktop{
+        @include m.grid(3, 5rem);
+    }
+    .texto-entrada{
+        &:hover{
+            cursor:pointer;
+        }
+        h4{
+            color:v.$primario;
+        }   
+    }
+}
+
+.botones{
+    margin-top: 5rem;
+    text-align: center;
+    #siguiente,
+    #atras{
+        border:solid 1px v.$primario;
+        padding:.5rem 1rem;
+        border-radius: .5rem;
+    }
+    #informacion-pagina{
+        padding:1rem;
+        font-size:1.6rem;
+        color:v.$primario;
+    }
+}

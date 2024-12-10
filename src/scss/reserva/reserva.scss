@@ -1,0 +1,82 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+@use 'sass:color';
+
+.contenido-reserva {
+    @include m.desktop{
+        width:70%;
+        margin:0 auto;
+        //@include m.grid(2, 0);
+        //.background{
+        //background-image: url(/build/img/contacto_background.jpg);
+        //background-repeat: no-repeat;
+        //background-position: center center;
+        //background-size: cover;
+        //}
+    }
+    .alertas{
+        margin-bottom:2rem;
+        .error{
+            background-color: color.adjust(v.$rojo, $lightness: 60%);
+            //background-color: lighten(v.$rojo, 60%);
+        }
+        .exito{
+           background-color: color.adjust(v.$verde, $lightness: 60%);
+            //background-color: lighten(v.$verde, 60%);
+            
+        }
+        .exito.final{
+            text-align: center;
+            border-right: solid .5rem v.$verde;
+            padding: 2rem;
+            font-size: 1.8rem;
+        }
+
+        .indicaciones{
+            text-align: center;
+        }
+    }
+
+    .hidden{
+        display:none;
+    }
+    
+    
+}
+.formulario{
+    .campo{
+        margin-bottom:2rem;
+        &:last-of-type{
+            margin-bottom:0;
+        }
+
+        label{
+            text-transform: uppercase;
+            display: block;
+            font-weight: 700;
+            margin-bottom:1rem;
+        }
+
+        input:not([type="submit"]),
+        select{
+            width:100%;
+            padding:1rem;
+            border:.4rem solid v.$primario;
+        }
+
+        input[type="submit"]{
+            background-color: v.$primario;
+            color:v.$blanco;
+            width:100%;
+            border:none;
+            padding:1rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            &:hover{
+                cursor:pointer;
+            }
+        }
+
+    }
+
+}

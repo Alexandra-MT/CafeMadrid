@@ -1,0 +1,11 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.contenido-entrada{
+    text-align: justify;
+        span{
+            color:v.$naranjaOscuro;
+            text-transform:capitalize;
+        }
+    
+}

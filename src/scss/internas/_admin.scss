@@ -1,0 +1,61 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.panel{
+    margin: 10rem 0;
+}
+.contenedor.admin{
+    h1{
+        padding-top:5rem;
+        color:v.$primario;
+    }
+    .acciones{
+        display:flex;
+        justify-content: center;
+        gap:1rem;
+        
+        .boton{
+            width:19rem;
+        }
+        &.principales{
+            .boton{
+                margin-top: 0;
+            }
+        }
+    }
+    .cerrar-sesion{
+      display: flex;
+      justify-content: center;
+    }
+
+// UL
+    .reserva,
+    .blog,
+    .menu,
+    .galeria{
+        li{
+            padding:1rem;
+            border-top:2px solid v.$secundario;
+            p{
+                font-weight:v.$bold;
+                span{
+                    font-weight:400;
+                }
+                .imagen-entrada,
+                .imagen-galeria{
+                    width:25rem;
+                }
+            }
+        &:hover{
+                background-color: v.$secundario;
+                p{
+                    color:v.$blanco;
+                }
+        } 
+        
+        }
+    }
+
+}
+
+

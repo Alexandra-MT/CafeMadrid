@@ -1,0 +1,60 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.imagen-small{
+    width: 20rem;
+}
+fieldset{
+    border: .3rem solid v.$primario;
+    legend{
+        color:v.$primario;
+        font-weight: 700;
+        padding: .5rem;
+        font-size: 1.8rem;
+    }
+    label{
+        display: block;
+        margin:2rem 0;
+        font-size: 1.8rem;
+    }
+    
+    input:not([type="submit"]),
+    select{
+        margin-bottom: 1rem;
+        width:100%;
+        padding:.5rem;
+        @include m.tablet{
+            width:40%;
+        }
+        @include m.desktop{
+            width:30%;
+        }
+    }
+    textarea{
+        width: 100%;
+        height: 20rem;  
+    }
+ 
+}
+.fecha-reserva{
+    border-top: .2rem solid v.$secundario;
+    padding-top: 2rem;
+} 
+
+.login{
+   fieldset{
+    display:grid;
+        margin: 0 2rem;
+        @include m.tablet{
+            width:50%;
+            margin: 0 auto;
+        }
+   }
+    input:not([type="submit"]){
+        width:100%;
+        
+    }
+    
+}
+
+

@@ -1,0 +1,51 @@
+@use 'base/mixins' as m;
+
+
+.barra-mobile{
+    padding:2rem 4rem;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    @include m.tablet{
+        display:none;
+    }
+    .menu{
+        img{
+            width:.7rem;
+        }
+        &:hover{
+            cursor:pointer;
+        }
+    }
+}
+.barra{
+    display:none;
+    @include m.tablet{
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.logo{
+    width:35%;
+   // margin: 0 auto;
+
+    @include m.tablet{
+        width: 15rem;
+        height:15rem;
+        margin:0;
+    }
+}
+.barra.mostrar{
+    .logo{
+        display:none;
+    }
+    display:flex;
+    justify-content: center;
+    a{
+        font-size: 2rem;
+        padding:.5rem;
+    } 
+}

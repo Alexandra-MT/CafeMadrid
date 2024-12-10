@@ -1,0 +1,54 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.boton-primario {
+    @include m.boton(v.$primario, inline-block);
+    margin: 2rem 0;
+}
+
+.boton-primario-block {
+    @include m.boton(v.$primario, block);
+    margin: 2rem 0;
+}
+
+.boton-secundario {
+    @include m.boton(v.$secundario, inline-block);
+    margin: 2rem 0;
+}
+
+.boton-secundario-block {
+    @include m.boton(v.$secundario, block);
+    margin: 2rem 0;
+}
+
+.boton-naranja {
+    @include m.boton(v.$naranja, inline-block);
+    margin: 2rem 0;
+}
+
+.boton-naranja-block {
+    @include m.boton(v.$naranja, block);
+    margin: 2rem 0;
+}
+
+.boton-verde {
+    @include m.boton(v.$verde, inline-block);
+    margin:2rem 0;
+}
+.boton-rojo-block{
+    @include m.boton(v.$rojo, block);
+    margin: 2rem 0;
+    padding:1rem;
+    width:100%;
+    
+}
+.boton-rojo {
+    @include m.boton(v.$rojo, inline-block);
+    margin:2rem 0;
+}
+.boton-verde-block{
+    @include m.boton(v.$verde, block);
+    margin: 2rem 0;
+    padding:1rem;
+   
+}
