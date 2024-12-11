@@ -68,7 +68,8 @@ exports.dev = dev;
 exports.imagenes = imagenes;
 exports.versionWebp = versionWebp;
 exports.versionAvif = versionAvif;
-exports.default = series(imagenes, versionWebp, versionAvif, css, js, dev);
+exports.default = parallel(imagenes, versionWebp, versionAvif, css, js, dev);
+exports.build = parallel(imagenes, versionWebp, versionAvif, css, js);
 
 //series - inicia la primera tarea y cuando acaba se inicia la segunda tarea
 

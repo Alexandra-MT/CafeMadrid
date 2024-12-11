@@ -15,7 +15,7 @@ let paginaActual = 1;
 
 // Consultar las entradas del blog mediante Api
 async function entradasBlog(){
-    const url = '${location.origin}/api/blog';
+    const url =`${location.origin}/api/blog`;
     //const url = 'http://localhost:3000/api/blog';
     const resultado = await fetch(url);
     const entradas = await resultado.json();
