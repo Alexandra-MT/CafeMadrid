@@ -6,6 +6,7 @@ use Model\Menu;
 use MVC\Router;
 
 class MenuController{
+    //Menu
     public static function index(Router $router){
         //Proteger la ruta
         isAuth();
@@ -21,6 +22,7 @@ class MenuController{
         ]);
     }
 
+    //Crear menu
     public static function crear(Router $router){
         //Proteger ruta
         isAuth();
@@ -43,8 +45,6 @@ class MenuController{
                     header('Location: /menu-mostrar?exito=1');
                 }
             }
-
-            //$alertas = Menu::getAlertas();
         }
         //Vista
         $router->render('menu/crear',[
@@ -54,6 +54,7 @@ class MenuController{
         ]);
     }
 
+    //Actualizar menu
     public static function actualizar(Router $router){
         //Proteger ruta
         isAuth();
@@ -94,6 +95,7 @@ class MenuController{
 
     }
 
+    //Eliminar menu
     public static function eliminar(Router $router){
         //Proteger ruta
         isAuth();
@@ -103,7 +105,6 @@ class MenuController{
             $id = $_POST['id'];
             //Convertir valor $id a integer
             $id = intval($id); //numero
-            //$id = filter_var($id,FILTER_VALIDATE_INT);
             //Redireccionar si no hay $id
             if(!$id){
                 header('Location: /menu-mostrar');

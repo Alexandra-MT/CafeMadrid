@@ -1,5 +1,5 @@
 <?php
-
+//Mostrar variable
 function debuguear($variable) : string {
     echo "<pre>";
     var_dump($variable);
@@ -7,13 +7,13 @@ function debuguear($variable) : string {
     exit;
 }
 
-// Escapa / Sanitizar el HTML
+//Escapa / Sanitizar el HTML
 function s($html) : string {
     $s = htmlspecialchars($html);
     return $s;
 }
 
-// Función que revisa que el usuario este autenticado
+//Función que revisa que el usuario este autenticado
 function isAuth() : void {
     if(!isset($_SESSION)) {
         session_start();
@@ -23,21 +23,21 @@ function isAuth() : void {
     }
 }
 
-//muestra los mensajes
+//Muestra los mensajes en la parte de Admin
 function mostrarNotificacion($codigo){
-    $mensaje='';
+    $mensaje = '';
     switch($codigo){
         case 1:
-            $mensaje='Creado Correctamente';
+            $mensaje = 'Creado Correctamente';
             break;
         case 2:
-            $mensaje='Actualizado Correctamente';
+            $mensaje = 'Actualizado Correctamente';
             break;
         case 3:
-            $mensaje='Eliminado Correctamente';
+            $mensaje = 'Eliminado Correctamente';
             break;
         default:
-            $mensaje=false;
+            $mensaje = false;
             break;
     }
     return $mensaje;

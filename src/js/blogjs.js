@@ -195,5 +195,3 @@ function renderizar(){
 }
 
 renderizar();
-
-console.log(window.location);

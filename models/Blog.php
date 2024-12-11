@@ -3,10 +3,14 @@
 namespace Model;
 
 class Blog extends ActiveRecord{
+    //Conexión a la BBDD
     protected static $db;
+    //Tabla
     protected static $tabla = 'blog';
+    //Columnas BBDD
     protected static $columnasDB = ['id', 'titulo', 'imagen', 'fecha', 'autor', 'introduccion', 'contenido'];
 
+     //Atributos
     public $id;
     public $titulo;
     public $imagen;
@@ -15,6 +19,7 @@ class Blog extends ActiveRecord{
     public $introduccion;
     public $contenido;
 
+    //Constructor
     public function __construct($args = []){
         $this->id = $args['id'] ?? null;
         $this->titulo = $args['titulo'] ?? '';
@@ -25,6 +30,7 @@ class Blog extends ActiveRecord{
         $this->contenido = $args['contenido'] ?? '';
     }
 
+    //Validar campos formulario
     public function validarBlog(){
         if(!$this->titulo || strlen($this->titulo) > 60){
             self::setAlerta('error', 'El titulo es obligatorio y no puede contener más de 60 caracteres');

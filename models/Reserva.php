@@ -3,10 +3,14 @@
 namespace Model;
 
 class Reserva extends ActiveRecord{
+    //Conexión a la BBDD
     protected static $db;
+    //Tabla
     protected static $tabla = 'reserva';
+    //Columnas BBDD
     protected static $columnasDB = ['id', 'nombre', 'email', 'personas', 'hora', 'fecha'];
 
+    //Atributos
     public $id;
     public $nombre;
     public $email;
@@ -14,6 +18,7 @@ class Reserva extends ActiveRecord{
     public $hora;
     public $fecha;
 
+    //Constructor
     public function __construct( $args = []){
         $this->id = $args['id'] ?? null;
         $this->nombre = $args['nombre'] ?? '';
@@ -23,6 +28,7 @@ class Reserva extends ActiveRecord{
         $this->fecha = $args['fecha'] ?? '';
     }
 
+    //Validar campos formulario
     public function validarReserva(){
         if(!$this->nombre){
             self::setAlerta('error', 'El nombre es obligatorio');

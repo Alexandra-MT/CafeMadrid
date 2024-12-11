@@ -10,11 +10,13 @@ use Model\Reserva;
 use PHPMailer\PHPMailer\PHPMailer;
 
 class PaginasController{
-
+    //INDEX
     public static function index(Router $router){
+        //Galeria
         $galeria = Galeria::all();
         $menuCafe = Menu::get(7);
         $menuPostre = Menu::getFrom(7, 7);
+        //Vista
         $router->render('paginas/home/index',[
             'titulo' => 'Inicio',
             'textoHeader' => 'El café es un idioma en sí mismo',
@@ -24,27 +26,31 @@ class PaginasController{
         ]);  
     }
 
+    //NOSOTROS
     public static function nosotros(Router $router){
-
+        //Vista
         $router->render('paginas/nosotros',[
             'titulo' => 'Nosotros',
             'textoHeader' => '¿Cuántas historias Empiezan con un café?',
         ]);  
     }
 
+    //PROCESO
     public static function proceso(Router $router){
-
+        //Vista
         $router->render('paginas/proceso',[
             'titulo' => 'Proceso',
             'textoHeader' => '¿Cómo hacemos nuestro café?',
         ]);  
     }
 
+    //MENU
     public static function menu(Router $router){
         $menuCafe = Menu::get(7);
         $menuPostre = Menu::getFrom(7,7);
         $menuPrimerosMeses = Menu::getFrom(7,14);
         $menuUltimosMeses = Menu::getFrom(7,21);
+        //Vista
         $router->render('paginas/menu/menu',[
             'titulo' => 'Menú',
             'textoHeader' => 'Disfruta nuestro delicioso menú',
@@ -55,36 +61,29 @@ class PaginasController{
         ]);  
     }
 
+    //BLOG
     public static function blog(Router $router){
-        /*$pagina = 1;
-        if (isset($_GET["pagina"])) {
-            $pagina = $_GET["pagina"];
-        }
-        $blogTotal = Blog::all();
-        //mostrar entradas por página
-        $total = count($blogTotal);
-        $productosPorPagina = 9;
-        $paginas = ceil($total / $productosPorPagina);
-        $offset = ($pagina-1) * $productosPorPagina;
-        $blog = Blog::getFrom($productosPorPagina,$offset);*/
+        //Vista
         $router->render('paginas/blog/blogjs',[
             'titulo' => 'Blog',
             'textoHeader' => 'Un café para leer',
-            //'blog' => $blog,
-            //'paginas' => $paginas,
-            //'pagina' => $pagina,
         ]);  
     }
     
+    //ENTRADA
     public static function entrada(Router $router){
+        //Obtener el $id mediante $_GET
         $id = $_GET['id'];
         $id = filter_var($id,FILTER_VALIDATE_INT);
+        //Redireccionar si no existe el id
         if(!$id){
             header('Location: /blog');
         }
+        //Obtener entrada
         $entrada = Blog::find($id);
         $tituloEntrada = $entrada->titulo;
         $headerClass = 'header-blog';
+        //Vista
         $router->render('paginas/blog/entrada',[
             'titulo' => 'Blog',
             'textoHeader' => $tituloEntrada,
@@ -93,20 +92,31 @@ class PaginasController{
         ]);
     }
 
+    //RESERVA
     public static function reserva(Router $router){
+        //Instancia Reserva
         $reserva = new Reserva;
+        //Alertas
         $alertas = [];
-
+        //POST
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
+            //Instancia Reserva con datos POST
             $reserva = new Reserva($_POST);
+            //Validar Reserva
             $alertas = $reserva->validarReserva();
+            //Si no hay alertas
             if(empty($alertas)){
+                //Comprobar que no existan más de tres reservas para la misma hora y fecha
                 $existeFecha = Reserva::belongsTo('fecha', $reserva->fecha);
                 $existeHora = Reserva::belongsTo('hora', $reserva->hora);
                 if(!((count($existeFecha) > 2) && (count($existeHora) > 2))){ // el array $reserva empieza en la posicion 0
+                        //Guardar BBDD
                         $resultado = $reserva->guardar();
+                        //Alerta exito
                         if($resultado){
                             $alertas = Reserva::setAlerta('exito', 'Reserva confirmada');
+
+                            //Enviar email de confirmación reserva
 
                             //Crear instancia de PHPMailer
                             $mail = new PHPMailer();
@@ -157,7 +167,7 @@ class PaginasController{
             }
         }
         $alertas = Reserva::getAlertas();
-
+        //Vista
         $router->render('paginas/reserva',[
             'titulo' => 'Reserva',
             'textoHeader' => 'Te esperamos',

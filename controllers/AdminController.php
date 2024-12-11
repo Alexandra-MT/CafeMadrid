@@ -6,8 +6,8 @@ use MVC\Router;
 use Model\Admin;
 
 class AdminController{
+    //Crear usuario unico
     public static function crear(Router $router){
-        //Crear usuario unico
         //Instancia admin
         $admin = new Admin();
         //Alertas
@@ -40,6 +40,8 @@ class AdminController{
             'alertas' => $alertas
         ]);
     }
+
+    //Login
     public static function login(Router $router){
         //Crear instancia
         $auth = new Admin();
@@ -69,7 +71,7 @@ class AdminController{
                     }else{
                         //Password correcto
                         //Autenticar al usuario
-                           $auth->autenticar();
+                        $auth->autenticar();
                     }   
                 }   
             }
@@ -81,11 +83,15 @@ class AdminController{
         'alertas' => $alertas,
         ]);
     }
-    public static function logout(Router $router){
+
+    //Logout
+    public static function logout(){
          session_start();
          $_SESSION = [];  
          header('Location: /');
     }
+
+    //Admin
     public static function index(Router $router){
         //Verificamos si hay sesión y si el valor de login es true
         isAuth();
@@ -96,7 +102,5 @@ class AdminController{
             'titulo' => 'CaféMadrid',
             'auth' => $auth
         ]);
-    }
-
-    
+    }   
 }

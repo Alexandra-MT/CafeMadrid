@@ -13,6 +13,7 @@ use Controllers\ReservaController;
 
 $router = new Router();
 
+//ZONA PRIVADA
 
 //CREAR USUARIO UNICO
 $router->get('/crear', [AdminController::class,'crear']);
@@ -49,6 +50,9 @@ $router->get('/blog/actualizar',[BlogController::class,'actualizar']);
 $router->post('/blog/actualizar',[BlogController::class,'actualizar']);
 $router->post('/blog/eliminar',[BlogController::class,'eliminar']);
 
+//API DE BLOG
+$router->get('/api/blog', [APIController::class, 'blog']);
+
 //RESERVA
 $router->get('/reserva-mostrar',[ReservaController::class,'index']);
 $router->post('/reserva-mostrar',[ReservaController::class,'index']);
@@ -58,7 +62,9 @@ $router->get('/reserva/actualizar',[ReservaController::class,'actualizar']);
 $router->post('/reserva/actualizar',[ReservaController::class,'actualizar']);
 $router->post('/reserva/eliminar',[ReservaController::class,'eliminar']);
 
-//PAGINAS- ZONA PUBLICA
+//ZONA PUBLICA
+
+//PAGINAS
 $router->get('/',[PaginasController::class,'index']);
 $router->get('/nosotros',[PaginasController::class,'nosotros']);
 $router->get('/proceso',[PaginasController::class,'proceso']);
@@ -67,10 +73,6 @@ $router->get('/blog',[PaginasController::class,'blog']);
 $router->get('/entrada',[PaginasController::class,'entrada']);
 $router->get('/reserva',[PaginasController::class,'reserva']);
 $router->post('/reserva',[PaginasController::class,'reserva']);
-
-
-//API DE BLOG
-$router->get('/api/blog', [APIController::class, 'blog']);
 
 // Comprueba y valida las rutas, que existan y les asigna las funciones del Controlador
 $router->comprobarRutas();

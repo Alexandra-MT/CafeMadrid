@@ -6,6 +6,7 @@ use Model\Blog;
 use MVC\Router;
 
 class BlogController{
+    //Blog
     public static function index(Router $router){
         //Proteger ruta
         isAuth();
@@ -21,6 +22,7 @@ class BlogController{
         ]);
     }
 
+    //Crear entrada
     public static function crear(Router $router){
         //Proteger ruta
         isAuth();
@@ -56,10 +58,6 @@ class BlogController{
                 $resultado = $blog->guardar();
                 //Redireccionar alerta
                 if($resultado){
-                    //Galeria::setAlerta('exito', 'Imagen subida correctamente');
-                    
-                    //header("refresh: 5; /admin");
-
                     header('Location:/blog-mostrar?exito=1');
                 }
             }
@@ -72,6 +70,7 @@ class BlogController{
         ]);
     }
 
+    //Actualizar entreda
     public static function actualizar(Router $router){
         //Proteger ruta
         isAuth();
@@ -119,10 +118,6 @@ class BlogController{
                 $resultado = $blog->guardar();
                 //Redireccionar, alerta
                 if($resultado){
-                    //Galeria::setAlerta('exito', 'Imagen subida correctamente');
-                    
-                    //header("refresh: 5; /admin");
-
                     header('Location:/blog-mostrar?exito=2');
                 }
             }
@@ -135,6 +130,7 @@ class BlogController{
         ]);
     }
 
+    //Eliminar entrada
     public static function eliminar(){
         //Protegemos ruta
         isAuth();
@@ -144,7 +140,6 @@ class BlogController{
             $id = $_POST['id']; //viene como string
             //Convertir valor $id a integer
             $id = intval($id); //numero
-            //$id = filter_var($id,FILTER_VALIDATE_INT);
             //Redireccionar si no hay $id
             if(!$id){
                 header('Location: /blog-mostrar');

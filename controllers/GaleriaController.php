@@ -6,6 +6,7 @@ use MVC\Router;
 use Model\Galeria;
 
 class GaleriaController{
+    //Galeria
     public static function index(Router $router){
         //Proteger ruta
         isAuth();
@@ -21,6 +22,7 @@ class GaleriaController{
         ]);
     }
 
+    //Crear galeria
     public static function crear(Router $router){
         //Proteger ruta
         isAuth();
@@ -55,14 +57,9 @@ class GaleriaController{
                 $resultado = $galeria->guardar();
                 //Redireccionar exito
                 if($resultado){
-                    //Galeria::setAlerta('exito', 'Imagen subida correctamente');
-                    
-                    //header("refresh: 5; /admin");
-
                     header('Location:/galeria-mostrar?exito=1');
                 }
             }
-            //$alertas = Galeria::getAlertas();
         }
         //Vista
         $router->render('galeria/crear',[
@@ -72,6 +69,7 @@ class GaleriaController{
         ]);
     }
 
+    //Actualizar galeria
     public static function actualizar(Router $router){
         //Proteger ruta
         isAuth();
@@ -120,14 +118,9 @@ class GaleriaController{
                 $resultado = $galeria->guardar();
                 //Redireccionar exito
                 if($resultado){
-                    //Galeria::setAlerta('exito', 'Imagen subida correctamente');
-                    
-                    //header("refresh: 5; /admin");
-
                     header('Location:/galeria-mostrar?exito=2');
                 }
             }
-            //$alertas = Galeria::getAlertas();
         }
         //Vista
         $router->render('galeria/actualizar',[
@@ -137,6 +130,7 @@ class GaleriaController{
         ]);
     }
 
+    //Eliminar galeria
     public static function eliminar(){
         //Proteger ruta
         isAuth();
@@ -146,7 +140,6 @@ class GaleriaController{
             $id = $_POST['id']; //viene como string
             //Convertir valor $id a integer
             $id = intval($id); //numero
-            //$id = filter_var($id,FILTER_VALIDATE_INT);
              //Redireccionar si no hay $id
             if(!$id){
                 header('Location: /galeria-mostrar');

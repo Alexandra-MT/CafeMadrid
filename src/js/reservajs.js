@@ -216,9 +216,6 @@ function seleccionarHora(){
 
         reserva.hora = e.target.value;
     })
-    
-    //inputHora.setAttribute('value',hora+":"+minutos);
-   
 }
 
 // Fecha
