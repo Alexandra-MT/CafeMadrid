@@ -4,7 +4,7 @@
     <h2><span>Nuestros</span> Secretos</h2>
     <div class="proceso-cafe">
         <div class="img">
-            <img src="build/img/proceso01.jpg" alt="imagen proceso";>
+            <img src="build/img/proceso01.webp" alt="imagen proceso";>
         </div>
         <div class="texto">
             <h3>La proporción</h3>
@@ -19,7 +19,7 @@
     </div>
     <div class="proceso-cafe">
         <div class="img">
-            <img src="build/img/proceso02.jpg" alt="imagen proceso";>
+            <img src="build/img/proceso02.webp" alt="imagen proceso";>
         </div>
         <div class="texto">
             <h3>El Agua</h3>
@@ -34,7 +34,7 @@
     </div>
     <div class="proceso-cafe">
         <div class="img">
-            <img src="build/img/proceso03.jpg" alt="imagen proceso";>
+            <img src="build/img/proceso03.webp" alt="imagen proceso";>
         </div>
         <div class="texto">
             <h3>El Tiempo</h3>
@@ -49,7 +49,7 @@
     </div>
     <div class="proceso-cafe">
         <div class="img">
-            <img src="build/img/proceso04.jpg" alt="imagen proceso";>
+            <img src="build/img/proceso04.webp" alt="imagen proceso";>
         </div>
         <div class="texto">
             <h3>El Filtración</h3>

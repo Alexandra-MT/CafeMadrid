@@ -1,10 +1,10 @@
-//cargamos pagina
+
 document.addEventListener('DOMContentLoaded', function() {
     cambiarHeader();
 });
 
-//header cada página
 
+//Cambiar header cada página
 function cambiarHeader(){
     const nav = document.querySelectorAll('.nav-principal a');
     const headerClass = document.querySelector('header');
@@ -12,7 +12,7 @@ function cambiarHeader(){
         if(a.className == 'activo'){
             const clase = a.text;
             let minClase = clase.toLowerCase();
-            //eliminar tildes  String.prototype.normalize()
+            //Eliminar tildes  String.prototype.normalize()
             minClase = minClase.normalize('NFD').replace(/[\u0300-\u036f]/g,"");
             headerClass.classList.add(`header-${minClase}`);
             if(minClase === 'menu'){

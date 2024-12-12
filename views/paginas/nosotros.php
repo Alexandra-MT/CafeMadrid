@@ -6,15 +6,15 @@
         <div class="imagen">
             <picture>
                 <source
-                srcset="build/img/nosotros02.avif"
-                type="image/avif">
-                <source
                 srcset="build/img/nosotros02.webp"
                 type="image/webp">
                 <source
+                srcset="build/img/nosotros02.avif"
+                type="image/avif">
+                <source
                 srcset="build/img/nosotros02.jpg"
                 type="image/jpg">
-                <img loading="lazy" src="build/img/nosotros02.jpg" alt="imagen-nosotros">
+                <img src="build/img/nosotros02.jpg" alt="imagen-nosotros">
             </picture>
         </div>
         <div class="texto">

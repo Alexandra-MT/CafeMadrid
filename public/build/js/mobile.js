@@ -1,3 +1,4 @@
+//Menu Mobile
 const mobileMenuBtn = document.querySelector('.mobile-menu');
 const barra = document.querySelector('.barra');
 const textoHeader = document.querySelector('.texto-header');

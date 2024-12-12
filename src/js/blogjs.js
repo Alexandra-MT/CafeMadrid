@@ -82,6 +82,7 @@ function mostrarEntradas(entradas){
         const imagenCont = document.createElement('IMG');
         imagenCont.setAttribute ("src", `/build/img/blog/${imagen}`);
         imagenCont.setAttribute ("alt", "imagen-entrada");
+        imagenCont.setAttribute ("decoding", "async");
 
         imagenEntrada.appendChild(imagenCont);
 
@@ -98,7 +99,7 @@ function mostrarEntradas(entradas){
         //enlaceEntrada.setAttribute ('href', `/entrada?id=${id}`);
 
         // Titulo entrada
-        const tituloEntrada = document.createElement('H4');
+        const tituloEntrada = document.createElement('H3');
         tituloEntrada.textContent = titulo;
 
         enlaceEntrada.appendChild(tituloEntrada);

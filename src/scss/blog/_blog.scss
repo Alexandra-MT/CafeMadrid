@@ -13,8 +13,13 @@
         &:hover{
             cursor:pointer;
         }
-        h4{
+        h3{
             color:v.$primario;
+            font-size: 1.8rem;
+            text-transform: none;
+            text-align: left;
+            padding-top:1rem;
+            font-family: v.$fuente-cursiva;
         }   
     }
 }

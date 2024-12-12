@@ -13,7 +13,7 @@
         <p><span>Seguramente, no te decepcionarán......</span></p>
         </div>
         <div class="imagen">
-            <img src="build/img/meetmeforcoffee.jpg" alt="imagen-menu">
+            <img src="build/img/meetmeforcoffee.webp" alt="imagen-menu">
         </div>
     </div>
 </main>
