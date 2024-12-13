@@ -8,8 +8,6 @@
     background-repeat: no-repeat;
     background-position: center 5rem, center 93%, 100%; //imagen, imagen, color para que se junte con la galeria, sino toma el ultimo de 92% y separa el contenido
     padding:15rem 2rem 20rem 2rem;
-
-   
     @include m.tablet{
         background-position: center 5rem, center 94%, 100%;
         background-size: 75%, 75%, 100%;
@@ -21,7 +19,6 @@
         //dos imagenes de fondo y el color de fondo
         background-size: 50%, 50%, 100%;
     }
-
 }
 .grid-menu{
      @include m.desktop{
@@ -41,6 +38,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        gap:1rem;
         p{
             color:v.$blanco;
             font-size:1.8rem;
@@ -57,7 +55,6 @@
             font-weight: v.$bold;
         }
     }
-
 .footer-menu{
     margin-top: -10rem;
 }

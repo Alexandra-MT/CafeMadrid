@@ -3,9 +3,13 @@
 
 .contenido-entrada{
     text-align: justify;
-        span{
-            color:v.$naranjaOscuro;
-            text-transform:capitalize;
-        }
-    
+    .titulo-entrada{
+        color:v.$secundario;
+        //text-transform: none;
+        font-size: 1.8rem;
+    }
+    span{
+        color:v.$naranjaOscuro;
+        text-transform:capitalize;
+    } 
 }

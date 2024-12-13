@@ -2,7 +2,7 @@
     <div class="contenido-header contenedor">
         <div class="barra-mobile">
             <div class="logo">
-                <a href="/" aria-label="Logo">
+                <a href="/" aria-label="Logo cafeteria">
                 <img src="build/img/logo2.png" alt="logo cafeteria">
                 </a>
             </div>
@@ -12,7 +12,7 @@
         </div>
         <div class="barra">
             <div class="logo">
-                <a href="/" aria-label="Logo">
+                <a href="/" aria-label="Logo cafeteria">
                 <img src="build/img/logo2.png" alt="logo cafeteria">
                 </a>
             </div>

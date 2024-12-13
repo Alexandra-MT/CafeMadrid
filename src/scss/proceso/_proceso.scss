@@ -1,14 +1,10 @@
 @use 'base/variables' as v;
 @use 'base/mixins' as m;
 
-
 .proceso-cafe{
     margin-bottom: 5rem;
     @include m.desktop{
         @include m.grid(2, 0rem);
-    }
-    &{
-        
     }
     &:last-of-type{
         margin-bottom: 0;
@@ -20,8 +16,7 @@
         }
         .texto{
             grid-row: 1/2;
-        }
-        
+        }  
     }
     img{
         height:100%;
@@ -35,14 +30,12 @@
         margin:0;
         text-align: left;
         color:v.$primario;
-        
         &::after{
             content:'';
             display:block;
             width:50%;
             height:3px;
             background-color: v.$secundario;
-        }
-        
+        } 
     }
 }

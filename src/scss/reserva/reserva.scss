@@ -6,13 +6,6 @@
     @include m.desktop{
         width:70%;
         margin:0 auto;
-        //@include m.grid(2, 0);
-        //.background{
-        //background-image: url(/build/img/contacto_background.jpg);
-        //background-repeat: no-repeat;
-        //background-position: center center;
-        //background-size: cover;
-        //}
     }
     .alertas{
         margin-bottom:2rem;
@@ -22,8 +15,7 @@
         }
         .exito{
            background-color: color.adjust(v.$verde, $lightness: 60%);
-            //background-color: lighten(v.$verde, 60%);
-            
+            //background-color: lighten(v.$verde, 60%);  
         }
         .exito.final{
             text-align: center;
@@ -31,17 +23,13 @@
             padding: 2rem;
             font-size: 1.8rem;
         }
-
         .indicaciones{
             text-align: center;
         }
     }
-
     .hidden{
         display:none;
-    }
-    
-    
+    }    
 }
 .formulario{
     .campo{
@@ -49,21 +37,18 @@
         &:last-of-type{
             margin-bottom:0;
         }
-
         label{
             text-transform: uppercase;
             display: block;
             font-weight: 700;
             margin-bottom:1rem;
         }
-
         input:not([type="submit"]),
         select{
             width:100%;
             padding:1rem;
             border:.4rem solid v.$primario;
         }
-
         input[type="submit"]{
             background-color: v.$primario;
             color:v.$blanco;
@@ -76,7 +61,5 @@
                 cursor:pointer;
             }
         }
-
     }
-
 }

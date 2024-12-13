@@ -3,6 +3,7 @@
 <main class="contenedor contenido-principal">
     <h2><span></span></h2>
     <div class="contenido-entrada">
+        <h3><?php echo $entrada->titulo; ?></h3>
         <div class="introduccion-entrada">
             <p><?php echo $entrada->introduccion; ?></p>
         </div>

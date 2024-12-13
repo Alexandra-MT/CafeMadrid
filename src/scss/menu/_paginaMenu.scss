@@ -2,26 +2,15 @@
 @use 'base/mixins' as m;
 
 .contenido-menu{
-    //background-image: url(../img/cafe_goodmorning.jpg);
-    //background-repeat: no-repeat;
-    //background-position: center bottom;
-    //background-size: 100%;
-    //aspect-ratio: 3 / 4;
-    //@include m.desktop{
-       // @include m.grid(2, v.$separacion);
-    //}
-
     @include m.grid(1, 5rem);
     @include m.desktop{
         @include m.grid(2, 5rem);
     }
-
     .texto{
         text-align: center;
         @include m.desktop{
             text-align: justify;
         }
-        
         p{
             &:nth-child(1){
                 margin-top:0;
@@ -30,7 +19,6 @@
                 margin-top:2rem;
                 margin-bottom:0;
             }
-            
             span{
                 font-family: v.$fuente_cursiva;
                 color: v.$primario;
@@ -40,28 +28,23 @@
                 text-align: center;
                 @include m.desktop{
                     text-align: end;
-                }
-                
-                }
+                } 
+            }
         }
     }
 }
 
 .imagen-fondo{
-        background-position: center 5rem, center 99%, 100%; //imagen, imagen, color para que se junte con la galeria, sino toma el ultimo de 92% y separa el contenido
-        padding:15rem 2rem 12rem 2rem;
-
-    
-        @include m.tablet{
-            background-position: center 5rem, center 99%, 100%;
-            padding:15rem 5rem 15rem 5rem;
-        }
-        @include m.desktop{
-            background-position: center 5rem, center 98%, 100%;
-            padding:15rem 0 15rem 0;
-           
-        }
-    
+    background-position: center 5rem, center 99%, 100%; //imagen, imagen, color para que se junte con la galeria, sino toma el ultimo de 92% y separa el contenido
+    padding:15rem 2rem 12rem 2rem;
+    @include m.tablet{
+        background-position: center 5rem, center 99%, 100%;
+        padding:15rem 5rem 15rem 5rem;
+    }
+    @include m.desktop{
+        background-position: center 5rem, center 98%, 100%;
+        padding:15rem 0 15rem 0;  
+    } 
 }
 .footer-menu{
     margin-top:0;

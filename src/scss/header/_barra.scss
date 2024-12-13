@@ -27,11 +27,9 @@
         align-items: center;
     }
 }
-
 .logo{
     width:35%;
    // margin: 0 auto;
-
     @include m.tablet{
         width: 15rem;
         height:15rem;

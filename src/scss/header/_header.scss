@@ -6,11 +6,12 @@
     position: relative;
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     height: 70rem;
     @include m.tablet{
+        background-position: unset;
         height: 60rem;
     }
-
     &::before{
         content:"";
         background-color: v.$negro;
@@ -21,7 +22,6 @@
         bottom:0;
         opacity:.5;
     }
-    
     .contenido-header{
         position: relative; // ya se va delante del before
         .texto-header{
@@ -32,25 +32,21 @@
                 font-size:2.5rem;
                 @include m.tablet{
                     font-size:3rem;
-                    margin-top: 10rem;
-                    
+                    margin-top: 10rem; 
                 }
             }
             &.mostrar{
                 h1{
                     margin-top:7rem;
                 }
-               
             }
-        }
-          
-    }
-   
+        }   
+    } 
 }
-
 //header de cada pagina
 .header-inicio{
     background-image: url('../img/header_inicio02.webp');
+    background-position: left;
 }
 .header-nosotros{
   background-image: url('../img/header_nosotros.webp');

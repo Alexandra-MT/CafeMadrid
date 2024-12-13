@@ -13,13 +13,11 @@ h1{
 h2{
     font-size: 2.6rem;
     color:v.$primario;
-
     span{
         color:v.$secundario;
         font-size:1.8rem;
         display:block;
     }
-
     &::after{ //despues del h2
         content: '';
         display: block;
@@ -30,7 +28,6 @@ h2{
         background-size: 10rem;
     }
 }
-
 .heading-blanco{ //heredamos de h2 papa modificar colores en el menu
     @extend h2;
     color:v.$blanco; 

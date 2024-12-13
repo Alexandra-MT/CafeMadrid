@@ -133,6 +133,10 @@ function seleccionarEntrada(datosEntrada){
     listadoArticulosDOM.classList = 'contenido-entrada';
     listadoArticulosDOM.id = 'contenido-entrada';
 
+    const contenedorTitulo = document.createElement('H3');
+    contenedorTitulo.textContent = titulo;
+    contenedorTitulo.setAttribute('class','titulo-entrada');
+
     const contenedorIntro = document.createElement('DIV');
     contenedorIntro.classList.add('introduccion-entrada');
 
@@ -164,6 +168,7 @@ function seleccionarEntrada(datosEntrada){
     const contenedor = document.createElement('ARTICLE');
     contenedor.classList.add('entrada-blog');
 
+    contenedor.appendChild(contenedorTitulo);
     contenedor.appendChild(contenedorIntro);
     contenedor.appendChild(imagenCont);
     contenedor.appendChild(info);

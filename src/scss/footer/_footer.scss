@@ -21,12 +21,12 @@
 .footer-box{
     font-family: v.$fuente_cursiva;
     h3{
-        font-family: v.$fuente_cursiva;
         margin:0 0 1rem 0;
-        color:v.$secundario;
+        color:v.$secundario;   
     }
     p, a{
         font-size:1.8rem;
         margin:0;
+        color:v.$primario;
     }
 }
